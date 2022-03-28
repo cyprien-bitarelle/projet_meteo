@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  background-image: linear-gradient(
+    to right top,
+    rgba(192, 221, 249, 1),
+    rgba(76, 76, 76, 1)
+  );
+}
+
+#zone_saisie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  width: 70%;
+  margin-top: 50px;
+}
+
+p {
+  margin-top: 15px;
+}
+
+h1 {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 45px;
+}
+
+li {
+  list-style-type: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.resultat {
+  font-size: 25px;
+  width: 70%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+.plusinfos {
+  display: grid;
+  text-align: center;
+  width: 70%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 50px;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+#soulign_lien {
+  grid-column: 1 / span 2;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+.info {
+  justify-self: start;
+}
+
+
+.clear {
+  background-image: url(./assets/clear.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.thunderstorm {
+  background-image: url(./assets/thunder.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: aliceblue;
+}
+
+.drizzle {
+  background-image: url(./assets/drizzle.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: aliceblue;
+}
+
+.rain {
+  background-image: url(./assets/rain.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: aliceblue;
+}
+
+.snow {
+  background-image: url(./assets/snow.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.clouds {
+  background-image: url(./assets/clouds.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#mapid {
+  height: 380px;
+  width: 50%;
+}
+
+#mapid {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
