@@ -1,5 +1,5 @@
-//Clé API. On la place ici dans le cas où on l'utiliserait dans plusieurs fonctions.
-const apikey = "";
+//Clé API OpenWeatherMap. On la place ici dans le cas où on l'utiliserait dans plusieurs fonctions.
+const apikey = "457228ff47f381f9930416ac2f639732";
 
 
 let mymap = L.map('mapid').setView([48.856614, 2.3522219], 9);
@@ -9,6 +9,7 @@ maxZoom: 18,
 id: 'mapbox/streets-v11',
 tileSize: 512,
 zoomOffset: -1,
+//Token leaflet
 accessToken: ''
 }).addTo(mymap);
 
@@ -18,6 +19,7 @@ if (navigator.geolocation) {
         // console.log(position.coords);
         position = position.coords;
         requete(position.latitude, position.longitude);
+        mymap = mymap.panTo(new L.LatLng(position.latitude, position.longitude));
       }, function(error) {
         console.log(`Erreur de géolocalisation N°${error.code} : ${error.message}`);
         console.log(error);
@@ -155,6 +157,7 @@ async function afficherAvecPays(input, pays) {
 
 //Fonction d'affichage des données basiques qui correspondent à l'entrée de l'utilisateur(avec le pays renseigné ou non).
 function afficher(stats){
+    mymap = mymap.panTo(new L.LatLng(stats.coord.lat, stats.coord.lon));
     let fiche = document.querySelector("#resultat");
     let affiche = `
     <p><img src =" https://openweathermap.org/img/wn/${stats.weather[0].icon}.png"></p>
