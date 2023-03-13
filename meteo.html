@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="icon" href="./assets/icon.png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -14,35 +13,43 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
     <link rel="stylesheet" href="meteo.css">
-    <title>API Météo - Cyprien Bitarelle </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@300;400&display=swap"
+        rel="stylesheet">
+    <title>Application Météo via API</title>
 </head>
 
-<body id="fond">
-    <div id="zone_saisie">
-        <h1>Appli météo</h1>
-
-        <div class="input-group">
-
-            <span class="input-group-text">Ville et pays</span>
-            <input onkeypress="if(event.keyCode==13) {recupText()}" placeholder="Ville" id="input" type="text"
-                aria-label="Ville" class="form-control">
-            <input onkeypress="if(event.keyCode==13) {recupText()}" placeholder="Pays" type="text"
-                id="pays" aria-label="Prénom" class="form-control">
-            <button onclick="recupText()" id="button" type="button" class="btn btn-primary">GO</button>
+<body>
+    <div id="content">
+        <div id="message">
 
         </div>
-        <p>Vous pouvez effectuer une recherche simple par ville uniquement. Pour effectuer une recherche plus précise,
-            saisez le nom de la ville puis son pays.</p>
+
+        <div id="zone_saisie">
+            <aside>
+                <input onkeypress="if(event.keyCode==13) {recupText()}" placeholder="Ville" id="input" type="text">
+                    <select name="pays" id="pays"  onkeypress="if(event.keyCode==13) {recupText()}">
+                        <option value="">------</option>
+                    </select>
+                <button onclick="recupText()" id="button" type="button">GO</button>
+                </aside>   
+            <p>Vous pouvez effectuer une recherche simple par ville uniquement. Pour effectuer une recherche plus
+                précise,
+                saisissez le nom de la ville puis son pays.</p>
+        </div>
+
+        <div id="resultat" class="resultat">
+        </div>
+
+        <div id="date">
+
+        </div>
+
+        <div id="mapid">
+
+        </div>
     </div>
-
-    <div id="resultat" class="resultat">
-
-    </div>
-
-    <div id="mapid">
-
-    </div>
-
     <script src="meteo.js"></script>
 </body>
 

@@ -2,139 +2,151 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Sofia Sans Extra Condensed', sans-serif;
 }
 
 body {
   min-height: 100vh;
-  height: 100%;
-  background-image: linear-gradient(
-    to right top,
-    rgba(192, 221, 249, 1),
-    rgba(76, 76, 76, 1)
-  );
+  background-color: #3981bf;
+  background-image: url(./assets/fond.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+#message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+#heure {
+  font-family: 'Sofia Sans Extra Condensed', sans-serif;
+  font-size: 45px;
+}
+
+#date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#jour {
+  font-size: 30px;
+}
+
+#num-jour {
+  font-size: 80px;
+}
+
+#mois-annee {
+  font-size: 20px;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 40vh 40vh;
+  width: 90%;
+  height: fit-content;
+  grid-gap: 10px;
+}
+
+#content div {
+  background-color: rgba(255, 255, 255, 0.103);
+  border-radius: 15px;
+
 }
 
 #zone_saisie {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 20px;
+  justify-content: space-around;
 }
 
-.input-group {
-  width: 70%;
-  margin-top: 50px;
-}
-
-p {
-  margin-top: 15px;
-}
-
-h1 {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 45px;
-}
-
-li {
-  list-style-type: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.resultat {
-  font-size: 25px;
-  width: 70%;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
-  column-gap: 5px;
+#zone_saisie aside {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  justify-items: center;
-  margin-top: 50px;
 }
 
-.plusinfos {
-  display: grid;
+#zone_saisie input {
+  width: 30%;
+  font-size: 24px;
+  background-color: transparent;
+  border: white 1px solid;
+  color: white;
   text-align: center;
-  width: 70%;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: 50px;
-  font-size: 25px;
-  margin-bottom: 50px;
 }
 
-#soulign_lien {
-  grid-column: 1 / span 2;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 15px;
-}
-
-.info {
-  justify-self: start;
-}
-
-
-.clear {
-  background-image: url(./assets/clear.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.thunderstorm {
-  background-image: url(./assets/thunder.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: aliceblue;
-}
-
-.drizzle {
-  background-image: url(./assets/drizzle.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: aliceblue;
-}
-
-.rain {
-  background-image: url(./assets/rain.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: aliceblue;
-}
-
-.snow {
-  background-image: url(./assets/snow.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.clouds {
-  background-image: url(./assets/clouds.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-#mapid {
-  height: 380px;
+#zone_saisie select {
   width: 50%;
+  font-size: 24px;
+  background-color: transparent;
+  border: white 1px solid;
+  color: white;
+  text-align: center;
 }
 
-#mapid {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: 50px;
-  margin-bottom: 50px;
+#zone_saisie option {
+  color: black;
+  width: 30%;
+}
+
+#zone_saisie input::placeholder {
+  text-align: center;
+  color: white;
+}
+
+#button {
+  color: #609ed7;
+  background-color: white;
+  border-radius: 0;
+  border: white 1px solid;
+  cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#zone_saisie p {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+
+/* SUR UNE GRID IL FAUT SPECIFIER LA POSITION AVEC ROW ET COLUMN SINON CA FOUT LA MERDE */
+#resultat {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column: 3 /4;
+  /* display: flex;
+  flex-direction: column;
+  jus */
+  text-align: center;
+  font-size: 20px;
+}
+
+#resultat p:first-of-type {
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+#coucher-de-soleil {
+  height: 70px;
+}
+
+#icon {
+  height: 200px;
 }
