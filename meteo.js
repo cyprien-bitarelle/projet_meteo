@@ -1,5 +1,5 @@
 //Clé API OpenWeatherMap. On la place ici dans le cas où on l'utiliserait dans plusieurs fonctions.
-const apikey = "";
+const apikey = "457228ff47f381f9930416ac2f639732";
 
 async function récupererPaysListe() {
   let select = document.getElementById("pays");
@@ -27,7 +27,8 @@ L.tileLayer(
     tileSize: 512,
     zoomOffset: -1,
     //Token leaflet
-    accessToken: "",
+    accessToken:
+      "pk.eyJ1IjoiYmliaXJ6IiwiYSI6ImNrdDRkZ3Y5NDEzMXcycHMybzhvaGp6czQifQ.I3whrNWN0xxkQ5VRej0W-A",
   }
 ).addTo(mymap);
 
