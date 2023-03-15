@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/icon.png">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-        crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-    <link rel="stylesheet" href="meteo.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@300;400&display=swap"
-        rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="meteo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <title>Application Météo via API</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="content">
-        <div id="message">
+      <div id="message"></div>
 
-        </div>
+      <div id="zone_saisie">
+        <aside>
+          <input
+            onkeypress="if(event.keyCode==13) {recupText()}"
+            placeholder="Ville"
+            id="input"
+            type="text"
+          />
+          <select
+            name="pays"
+            id="pays"
+            onkeypress="if(event.keyCode==13) {recupText()}"
+          >
+            <option value="">------</option>
+          </select>
+          <button onclick="recupText()" id="button" type="button">GO</button>
+        </aside>
+        <p>
+          Vous pouvez effectuer une recherche simple par ville uniquement. Pour
+          effectuer une recherche plus précise, saisissez le nom de la ville
+          puis son pays.
+        </p>
+      </div>
 
-        <div id="zone_saisie">
-            <aside>
-                <input onkeypress="if(event.keyCode==13) {recupText()}" placeholder="Ville" id="input" type="text">
-                    <select name="pays" id="pays"  onkeypress="if(event.keyCode==13) {recupText()}">
-                        <option value="">------</option>
-                    </select>
-                <button onclick="recupText()" id="button" type="button">GO</button>
-                </aside>   
-            <p>Vous pouvez effectuer une recherche simple par ville uniquement. Pour effectuer une recherche plus
-                précise,
-                saisissez le nom de la ville puis son pays.</p>
-        </div>
+      <div id="resultat" class="resultat"></div>
 
-        <div id="resultat" class="resultat">
-        </div>
+      <div id="date"></div>
 
-        <div id="date">
-
-        </div>
-
-        <div id="mapid">
-
-        </div>
+      <div id="mapid"></div>
     </div>
+    <script src="config.js"></script>
     <script src="meteo.js"></script>
-</body>
-
+  </body>
 </html>
